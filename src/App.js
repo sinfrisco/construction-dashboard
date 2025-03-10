@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ConstructionDashboard from './components/dashboard/ConstructionDashboard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ConstructionDashboard 
+        projectFile="/data/project-budget.csv"
+        projectMeta={{
+          projectName: "Your Project Name",
+          startDate: "January 1, 2024",
+          endDate: "December 31, 2025",
+          currentDate: "March 9, 2025"
+        }}
+      />
     </div>
   );
 }
